@@ -1,5 +1,5 @@
 {
-  "name": "nativescript-google-maps-sdk",
+  "name": "@viggohq/nativescript-google-maps-sdk",
   "version": "3.0.2",
   "description": "Google Maps SDK plugin for Nativescript",
   "main": "map-view",
@@ -29,7 +29,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/dapriett/nativescript-google-maps-sdk.git"
+    "url": "git+ssh://git@github.com/viggohq/nativescript-google-maps-sdk.git"
   },
   "keywords": [
     "Nativescript",
