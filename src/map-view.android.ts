@@ -82,6 +82,7 @@ export class MapView extends MapViewBase {
         let options = new com.google.android.gms.maps.GoogleMapOptions();
         if (cameraPosition) options = options.camera(cameraPosition);
         this.nativeView = new com.google.android.gms.maps.MapView(this._context, options);
+        this.nativeView.setSaveFromParentEnabled(this.saveStateEnabled);
         this.nativeView.onCreate(null);
         this.nativeView.onResume();
 

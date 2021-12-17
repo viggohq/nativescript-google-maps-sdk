@@ -158,6 +158,7 @@ The following properties are available for adjusting the camera view:
 `tilt` | Tilt, in degrees: `number`
 `padding` | Top, bottom, left and right padding amounts, in Device Independent Pixels: `number[]` (array)
 `mapAnimationsEnabled` | Whether or not to animate camera changes: `Boolean`
+`saveStateEnabled` | Whether or not to save map state (Android only): `Boolean`
 
 ## Events
 

@@ -142,6 +142,7 @@ export abstract class MapViewBase extends View implements MapView {
     public tilt: number;
     public padding: number[];
     public mapAnimationsEnabled: boolean;
+    public saveStateEnabled: boolean;
 
     public infoWindowTemplate: string | Template;
     public infoWindowTemplates: string | Array<KeyedTemplate>;
@@ -399,6 +400,9 @@ paddingProperty.register(MapViewBase);
 
 export const mapAnimationsEnabledProperty = new Property<MapViewBase, boolean>({ name: 'mapAnimationsEnabled', defaultValue: true });
 mapAnimationsEnabledProperty.register(MapViewBase);
+
+export const saveStateEnabledProperty = new Property<MapViewBase, boolean>({ name: 'saveStateEnabled', defaultValue: true });
+saveStateEnabledProperty.register(MapViewBase);
 
 export interface UISettingsBase {
     readonly compassEnabled;
