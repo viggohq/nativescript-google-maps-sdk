@@ -8,6 +8,8 @@ exec('tns --version', (err, stdout, stderr) => {
         return;
     }
 
+    const newLineAt = stdout.indexOf('\n');
+    if (newLineAt > -1) stdout = stdout.substring(0, newLineAt).trim();
     const tnsVersion = semver.major(stdout);
 
     // execute 'tns plugin build' for {N} version > 4. This command builds .aar in platforms/android folder.
