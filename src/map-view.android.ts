@@ -77,6 +77,7 @@ export class MapView extends MapViewBase {
     }
 
     public createNativeView() {
+        this._markers = new Array<Marker>();
         var cameraPosition = this._createCameraPosition();
 
         let options = new com.google.android.gms.maps.GoogleMapOptions();
