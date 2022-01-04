@@ -1,13 +1,7 @@
-import {
-    MapViewBase, BoundsBase, CircleBase,
-    MarkerBase, PolygonBase, PolylineBase, ProjectionBase,
-    PositionBase, ShapeBase, latitudeProperty, VisibleRegionBase,
-    longitudeProperty, bearingProperty, zoomProperty,
-    tiltProperty, StyleBase, UISettingsBase, getColorHue
-} from "./map-view-common";
-import { GC, layout } from "@nativescript/core/utils"
-import { Image, Color, ImageSource } from "@nativescript/core";
+import { Color, Image, ImageSource } from "@nativescript/core";
 import { Point } from "@nativescript/core/ui/core/view";
+import { GC, layout } from "@nativescript/core/utils";
+import { bearingProperty, BoundsBase, CircleBase, getColorHue, latitudeProperty, longitudeProperty, MapViewBase, MarkerBase, PolygonBase, PolylineBase, PositionBase, ProjectionBase, ShapeBase, StyleBase, tiltProperty, UISettingsBase, VisibleRegionBase, zoomProperty } from "./map-view-common";
 
 export * from "./map-view-common";
 
@@ -354,8 +348,8 @@ export class MapView extends MapViewBase {
         }
     }
 
-    get ios(): never {
-        throw new Error('Now use instance.nativeView instead of instance.ios');
+    get ios(): any {
+        return this.nativeView;
     }
 
     get gMap() {

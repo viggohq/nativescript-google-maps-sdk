@@ -1,11 +1,9 @@
-import {
-    MapView, Position, Marker, Shape, Polyline, Polygon, Projection,
-    Circle, Camera, MarkerEventData, ShapeEventData, VisibleRegion,
-    CameraEventData, PositionEventData, Bounds, Style, UISettings, IndoorBuilding, IndoorLevel,
-    IndoorLevelActivatedEventData, BuildingFocusedEventData
-} from "./map-view";
+import { Builder, Color, eachDescendant, Image, KeyedTemplate, LayoutBase, Property, ProxyViewContainer, StackLayout, Template, View } from "@nativescript/core";
 import { Point } from "@nativescript/core/ui/core/view";
-import { View, Template, KeyedTemplate, Image, LayoutBase, Property, Color, Builder, eachDescendant, ProxyViewContainer, StackLayout } from "@nativescript/core";
+import {
+    Bounds, BuildingFocusedEventData, Camera, CameraEventData, Circle, IndoorBuilding, IndoorLevel,
+    IndoorLevelActivatedEventData, MapView, Marker, MarkerEventData, Polygon, Polyline, Position, PositionEventData, Projection, Shape, ShapeEventData, Style, StyleElement, StyleElementType, StyleFeatureType, StyleStylers, VisibleRegion
+} from "./map-view";
 
 function onInfoWindowTemplatesChanged(mapView: MapViewBase) {
     let _infoWindowTemplates = new Array<KeyedTemplate>();
@@ -82,8 +80,6 @@ function onDescendantsLoaded(view: View, callback: () => void) {
 
     watchLoaded(view, View.loadedEvent);
 }
-
-export { Style as StyleBase };
 
 export module knownTemplates {
     export const infoWindowTemplate = "infoWindowTemplate";
@@ -414,6 +410,20 @@ export interface UISettingsBase {
     readonly tiltGesturesEnabled: boolean;
     readonly zoomControlsEnabled: boolean;
     readonly zoomGesturesEnabled: boolean;
+}
+
+export class StyleElementBase implements StyleElement {
+    public featureType?: StyleFeatureType;
+    public elementType?: StyleElementType;
+    public stylers: Array<StyleStylers>;
+}
+
+export class StyleBase extends Array<StyleElementBase> implements Style {
+    public center: Position;
+    public radius: number;
+    public strokeWidth: number;
+    public strokeColor: Color;
+    public fillColor: Color;
 }
 
 export abstract class ProjectionBase implements Projection {

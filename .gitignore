@@ -4,7 +4,9 @@
 logs
 *.log
 **/*.js
+*.js.map
 !/demo/**/*.js
+src/platforms/android/nativescript_google_maps_sdk.aar
 
 # Runtime data
 pids
