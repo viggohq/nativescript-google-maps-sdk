@@ -1,5 +1,5 @@
+import { Color, EventData, Image, Property, View } from "@nativescript/core";
 import { Point } from "@nativescript/core/ui/core/view";
-import { Property, View, Image, Color, EventData } from "@nativescript/core";
 
 export class IndoorLevel {
     public name: string;
@@ -75,6 +75,8 @@ export class MapView extends View {
 
     public removeAllMarkers(): void;
 
+    public getMarkers(): Marker[];
+
     public findMarker(callback: (marker: Marker) => boolean): Marker;
 
     public notifyMarkerEvent(eventName: string, marker: Marker);
@@ -88,6 +90,8 @@ export class MapView extends View {
     public removeShape(shape: Shape): void;
 
     public removeAllShapes(): void;
+
+    public getShapes(): Shape[];
 
     public findShape(callback: (shape: Shape) => boolean): Shape;
 

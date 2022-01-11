@@ -297,6 +297,14 @@ export abstract class MapViewBase extends View implements MapView {
         });
     }
 
+    public getMarkers() {
+        return this._markers;
+    }
+
+    public getShapes() {
+        return this._shapes;
+    }
+
     notifyMapReady() {
         this.notify({ eventName: MapViewBase.mapReadyEvent, object: this, gMap: this.gMap });
     }
